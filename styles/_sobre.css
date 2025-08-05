@@ -1,0 +1,84 @@
+@charset "utf-8";
+.section--sobre {
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-4);
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.85));
+  border-radius: var(--space-4);
+  border: 1px solid var(--borda-suave);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+  margin: 0 auto var(--space-8); /* Centraliza + margem inferior */
+  width: calc(100% - 2rem); /* Largura total - margens laterais (1rem de cada lado) */
+  max-width: 1024px; 
+}
+
+.titulo--secao {
+  font-family: var(--font-heading);
+  font-size: var(--font-xl); 
+  color: var(--laranja-principal);
+  margin-bottom: var(--space-6); 
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  position: relative;
+}
+
+.titulo--secao::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--laranja-principal);
+  margin: 1rem auto 0 auto;
+}
+
+.texto--sobre {
+  font-family: var(--font-body);
+  font-size: var(--font-sm); 
+  line-height: 1.9;
+  color: var(--branco);
+  margin-bottom: var(--space-5);
+  text-align: justify;
+  max-width: 90ch;
+  margin-inline: auto;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .section--sobre {
+    padding: var(--space-7) var(--space-6); 
+    margin-bottom: 10rem;
+  }
+
+  .titulo--secao {
+    font-size: var(--font-xxl); 
+  }
+
+  .texto--sobre {
+    font-size: var(--font-md);
+    max-width: 80ch;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .section--sobre {
+    padding: var(--space-8);
+    width: 100% ;
+
+  }
+
+  .titulo--secao {
+    font-size: var(--font-xxxl); 
+  }
+
+  .texto--sobre {
+    font-size: var(--font-lg); 
+    max-width: 70ch;
+  }
+}
+
+/*exceção estilização da sessão TES, que reutilizou o mesmo CSS acima. */
+.destaque {
+  color: var(--laranja-principal);
+}

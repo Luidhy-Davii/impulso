@@ -1,0 +1,126 @@
+/* FOOTER - MOBILE FIRST */
+.footer--impulso {
+  background-color: var(--preto-moderno);
+  color: var(--branco);
+  padding: var(--space-7) var(--space-4) var(--space-5);
+  border-top: 1px solid var(--laranja-principal);
+}
+
+.footer--container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.footer--info {
+  max-width: 40ch;
+}
+
+.footer--titulo {
+  font-family: var(--font-heading);
+  font-size: var(--font-xxl);
+  color: var(--laranja-principal);
+  line-height: 1.2;
+}
+
+.footer--texto {
+  font-family: var(--font-body);
+  font-size: var(--font-sm);
+  margin-top: var(--space-2);
+  line-height: 1.6;
+}
+
+.footer--lista {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.footer--lista li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.footer--lista a,
+.footer--lista span {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer--lista a:hover {
+  color: var(--laranja-terciario);
+}
+
+.footer--lista i {
+  color: var(--laranja-principal);
+  font-size: var(--font-md);
+  transition: all 0.3s ease;
+  min-width: 24px;
+  text-align: center;
+}
+
+.footer--lista a:hover i {
+  color: var(--laranja-terciario);
+  transform: translateY(-2px);
+}
+
+.footer--creditos {
+  text-align: center;
+  font-size: var(--font-xs);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* TABLET (768px+) */
+@media (min-width: 768px) {
+  .footer--container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--space-8);
+  }
+  
+  .footer--lista {
+    gap: var(--space-4);
+  }
+  
+  .footer--lista a,
+  .footer--lista span {
+    font-size: var(--font-sm);
+  }
+}
+
+/* DESKTOP (1024px+) */
+@media (min-width: 1024px) {
+  .footer--impulso {
+    padding: var(--space-8) 0 var(--space-6);
+  }
+  
+  .footer--container {
+    padding: 0 var(--space-6);
+  }
+  
+  .footer--titulo {
+    font-size: var(--medium-large);
+  }
+  
+  .footer--texto {
+    font-size: var(--font-md);
+  }
+  
+  .footer--lista a,
+  .footer--lista span {
+    font-size: var(--font-md);
+  }
+  
+  .footer--creditos {
+    margin-top: var(--space-7);
+  }
+}
