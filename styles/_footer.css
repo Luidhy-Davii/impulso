@@ -86,11 +86,11 @@
     justify-content: space-between;
     gap: var(--space-8);
   }
-  
+
   .footer--lista {
     gap: var(--space-4);
   }
-  
+
   .footer--lista a,
   .footer--lista span {
     font-size: var(--font-sm);
@@ -102,24 +102,24 @@
   .footer--impulso {
     padding: var(--space-8) 0 var(--space-6);
   }
-  
+
   .footer--container {
     padding: 0 var(--space-6);
   }
-  
+
   .footer--titulo {
     font-size: var(--medium-large);
   }
-  
+
   .footer--texto {
     font-size: var(--font-md);
   }
-  
+
   .footer--lista a,
   .footer--lista span {
     font-size: var(--font-md);
   }
-  
+
   .footer--creditos {
     margin-top: var(--space-7);
   }

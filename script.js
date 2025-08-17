@@ -1,5 +1,4 @@
 // menu hamburguer
-
 const mobileMenu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav--list');
 
@@ -44,49 +43,46 @@ document.addEventListener('keydown', (event) => {
 
 // efeito escrever
 // Efeito de escrever suave com fade
-    function smoothTypeWriter(element) {
+function smoothTypeWriter(element) {
   const text = element.textContent;
   element.textContent = '';
-  
-  // ... (restante da função permanece igual)
 
+  let i = 0;
+  const baseSpeed = 70; // Velocidade base mais rápida
+  const randomVariation = 50; // Variação aleatória para naturalidade
 
-        let i = 0;
-        const baseSpeed = 70; // Velocidade base mais rápida
-        const randomVariation = 50; // Variação aleatória para naturalidade
+  // Cria span vazio para o cursor
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  element.appendChild(cursor);
 
-        // Cria span vazio para o cursor
-        const cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        element.appendChild(cursor);
+  function type() {
+    if (i < text.length) {
+      const charSpan = document.createElement('span');
+      charSpan.className = 'char-fade';
+      charSpan.textContent = text.charAt(i);
+      element.insertBefore(charSpan, cursor);
 
-        function type() {
-            if (i < text.length) {
-                const charSpan = document.createElement('span');
-                charSpan.className = 'char-fade';
-                charSpan.textContent = text.charAt(i);
-                element.insertBefore(charSpan, cursor);
+      // Velocidade com variação aleatória
+      const speed = baseSpeed + Math.random() * randomVariation;
+      i++;
+      setTimeout(type, speed);
+    } else {
+      cursor.classList.add('active');
+    }
+  }
 
-                // Velocidade com variação aleatória
-                const speed = baseSpeed + Math.random() * randomVariation;
-                i++;
-                setTimeout(type, speed);
-            } else {
-                cursor.classList.add('active');
-            }
-        }
+  type();
+}
 
-        type();
-      }
-
-    window.onload = function () {
-        const title = document.querySelector('.title--apresentacao');
-        const subtitle = document.querySelector('.frase--apresentacao');
-        //anima o título
-        smoothTypeWriter(title);
-        //anima o subtítulo
-        smoothTypeWriter(subtitle);
-    };
+window.onload = function () {
+  const title = document.querySelector('.title--apresentacao');
+  const subtitle = document.querySelector('.frase--apresentacao');
+  //anima o título
+  smoothTypeWriter(title);
+  //anima o subtítulo
+  smoothTypeWriter(subtitle);
+};
 
 // link scroll top 
 const btnTopo = document.getElementById("btnTopo");
@@ -94,7 +90,7 @@ const btnTopo = document.getElementById("btnTopo");
 // Função para verificar posição do scroll
 function toggleScrollButton() {
   const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-  
+
   // Mostra apenas se MAIOR que 200px e garante persistência
   if (scrollPosition > 200) {
     btnTopo.style.display = "block";
@@ -121,3 +117,6 @@ btnTopo.addEventListener("click", (e) => {
     behavior: "smooth"
   });
 });
+
+
+
